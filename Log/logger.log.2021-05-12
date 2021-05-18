@@ -1,0 +1,10 @@
+2021-05-12 18:10:09,607 INFO [root] [base.py (base_find_element:15)]] - 正在查找元素('css selector', '.pwd-login', 0)
+2021-05-12 18:10:09,641 INFO [root] [base.py (base_click:48)]] - 正在点击元素('css selector', '.pwd-login', 0)
+2021-05-12 18:10:09,788 INFO [root] [base.py (base_find_element:15)]] - 正在查找元素('css selector', '.el-input__inner', 1)
+2021-05-12 18:10:09,848 INFO [root] [base.py (base_input:30)]] - 正在给元素('css selector', '.el-input__inner', 1)输入内容
+2021-05-12 18:10:11,060 INFO [root] [base.py (base_find_element:15)]] - 正在查找元素('css selector', '.el-input__inner', 2)
+2021-05-12 18:10:11,078 INFO [root] [base.py (base_input:30)]] - 正在给元素('css selector', '.el-input__inner', 2)输入内容
+2021-05-12 18:10:11,324 INFO [root] [base.py (base_find_element:15)]] - 正在查找元素('css selector', 'button', 0)
+2021-05-12 18:10:11,336 INFO [root] [base.py (base_click:48)]] - 正在点击元素('css selector', 'button', 0)
+2021-05-12 18:10:13,395 INFO [root] [base.py (base_find_element:15)]] - 正在查找元素('css selector', '.nav-item', 0)
+2021-05-12 18:10:13,405 INFO [root] [base.py (base_get_text:57)]] - 正在获取元素('css selector', '.nav-item', 0)信息

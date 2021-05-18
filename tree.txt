@@ -1,0 +1,44 @@
+├─Base  
+│  │  base.py  基类
+│  │  get_driver.py  获取浏览器驱动
+│  │  __init__.py
+│          
+├─Config  配置文件目录
+│  │  Env_config.py  系统基础配置
+│  │  Login_config.py  登录页面元素配置
+│    
+├─Image  图片文件
+│
+├─Log  日志文件
+│      
+├─Page  页面层
+│  │  page_login.py  登录页面
+│  │  __init__.py
+│          
+├─Report  测试报告文件
+│      GSS-自动化测试报告.html
+│      
+├─Test
+│  │  __init__.py
+│  │  
+│  ├─Business  业务层
+│  │  │  business_login.py  登录逻辑组装
+│  │  │  __init__.py
+│  │  │  
+│  ├─Case 用例层
+│  │  │  case01_login.py  登录测试用例
+│  │  │  __init__.py
+│  │  │         
+│  ├─CaseSuite  用例集合
+│  │  │  case_suite.py
+│  │  │  __init__.py
+│          
+└─Tools  工具
+│    │  get_log.py  获取日志
+│    │  HTMLTestRunner.py  测试报告
+│    │  send_email.py  发送邮件
+│    │  webhook.py  钉钉推送
+│    │  __init__.py
+│
+└─run.py  执行入口
+            
