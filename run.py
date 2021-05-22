@@ -13,6 +13,7 @@ with open(report_dir, 'wb') as f:
     Runner = HTMLTestRunner(stream=f, verbosity=2, title=title, description=Browser).run(suite)
 
 if Send:
+
     # 发送邮件
     send_email(report_dir)
 
