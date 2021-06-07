@@ -2,11 +2,14 @@ import unittest
 import time
 from Tools.send_email import send_email
 from Tools.HTMLTestRunner import HTMLTestRunner
-from Test.CaseSuite.case_suite import CaseSuite
+# from Test.CaseSuite.case_suite import CaseSuite
+from Test.CaseSuite import case_suite_new
 from Tools.webhook import web_hook
 from Config.Env_config import *
 
-suite = CaseSuite().case_suite()
+
+case_list = [102]
+suite = case_suite_new.CaseSuite(case_list).case_suite()
 
 # 获取报告文件流并执行
 with open(report_dir, 'wb') as f:
