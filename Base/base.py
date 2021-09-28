@@ -50,6 +50,15 @@ class Base:
         except Exception:
             raise Exception("点击错误！")
 
+    # 通过使用JS进行点击操作
+    def js_click_element(self, loc):
+        try:
+            element = self.base_find_element(loc)
+            self.driver.execute_script("arguments[0].click();", element)
+            time.sleep(2)
+        except Exception:
+            raise ValueError('元素未找到！or 元素操作错误！')
+
     # 获取文字信息
     def base_get_text(self, loc):
         element = self.base_find_element(loc)
@@ -70,5 +79,44 @@ class Base:
             self.driver.get_screenshot_as_file("E:\GSSUIAutoTest\Image\{}.png".format(time.strftime("%Y_%m_%d %H_%M_%S")))
         except Exception:
             raise Exception("截图失败！")
+
+    # 滚动条
+    def base_scroll_bar(self):
+        try:
+            self.driver.execute_script("window.scrollTo(100,1000);")
+        except Exception:
+            raise Exception("滑动条出错啦！")
+
+    # 获取表格表头
+    def get_tr_th(self, loc, td_num):
+        try:
+            element = self.base_find_element(loc)
+            return element.find_elements_by_css_selector('tr')[0].find_elements_by_css_selector('th')[td_num].text
+        except Exception:
+            raise ValueError('元素未找到！or 元素操作错误！')
+
+    # 获取表格顶部数据
+    def get_tr_td_desc(self, loc, td_num):
+        try:
+            time.sleep(2)
+            element = self.base_find_element(loc)
+            return element.find_elements_by_css_selector('tr')[0].find_elements_by_css_selector('td')[td_num].text
+        except Exception:
+            raise ValueError('元素未找到！or 元素操作错误！')
+
+    # 点击列表顶部的按钮
+    def click_tr_td_button_desc(self, loc, td_num, btn_num, ele_type='button'):
+        try:
+            time.sleep(2)
+            element = self.base_find_element(loc)
+            td = element.find_elements_by_css_selector('tr')[0].find_elements_by_css_selector('td')[td_num]
+            # 兼容统计模块列表按钮为div的情况
+            if ele_type == 'div':
+                btn = td.find_elements_by_css_selector('div>div')[btn_num]
+            else:
+                btn = td.find_elements_by_css_selector('button')[btn_num]
+            self.driver.execute_script("arguments[0].click();", btn)
+        except Exception:
+            raise ValueError('元素未找到！or 元素操作错误！')
 
 

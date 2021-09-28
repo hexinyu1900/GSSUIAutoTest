@@ -1,6 +1,5 @@
 import unittest
 from Base.get_driver import GetDriver
-from Page.page_login import PageLogin
 from Test.Business.business_login import LoginBusiness
 from Tools.get_log import GetLogger
 
@@ -27,5 +26,6 @@ class GSSLogin(unittest.TestCase):
             self.login.base_screenshot()
             raise Exception("出错啦！", error)
         else:
-            self.assertEqual(info_list[0], url)
-            self.assertEqual(info_list[1], "概况总览")
+            self.assertEqual(info_list[0], url, "url地址不正确 —— 用例不通过！")
+            self.assertEqual(info_list[1], "概况总览", "页面标题不正确 —— 用例不通过！")
+
